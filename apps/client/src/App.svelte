@@ -1,11 +1,11 @@
-<script>
-  let count = 0;
-  function handleClick() {
-    count += 1;
+<script lang="ts">
+  async function sumbit() {
+    const response = await fetch('http://localhost:3000', {
+      method: 'GET',
+    });
+    const data = await response.json();
+    console.log(data);
   }
 </script>
 
-<button on:click={handleClick}>
-  Clicked {count}
-  {count === 1 ? 'time' : 'times'}
-</button>
+<button on:click={sumbit}> Отправить </button>
